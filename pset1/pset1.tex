@@ -1,0 +1,222 @@
+\documentclass{article}
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathtools}
+\usepackage{amssymb}
+
+\usetikzlibrary{automata,positioning}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{\hmwkClassTime (\hmwkClassInstructor): \hmwkTitle}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+
+%
+% Create Problem Sections
+%
+
+\newcommand{\enterProblemHeader}[1]{
+    \nobreak\extramarks{}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+    \nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+}
+
+\newcommand{\exitProblemHeader}[1]{
+    \nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+    \stepcounter{#1}
+    \nobreak\extramarks{Problem \arabic{#1}}{}\nobreak{}
+}
+
+\setcounter{secnumdepth}{0}
+\newcounter{partCounter}
+\newcounter{homeworkProblemCounter}
+\setcounter{homeworkProblemCounter}{1}
+\nobreak\extramarks{Problem \arabic{homeworkProblemCounter}}{}\nobreak{}
+
+\newcommand{\hmwkTitle}{Problem Set 1}
+\newcommand{\hmwkDueDate}{January 26th, 2024}
+\newcommand{\hmwkClass}{Introduction to Economics}
+\newcommand{\hmwkClassTime}{ECON 101}
+\newcommand{\hmwkClassInstructor}{Robert McDonough}
+\newcommand{\hmwkAuthorName}{\textbf{Rushil Umaretiya}}
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+    \normalsize\vspace{0.1in}\small{\textbf{Due\ on\ \hmwkDueDate\ at 11:59pm}}\\
+    \normalsize\text{Tuesday/Thursday 3:30-4:45, Genome Sciences 100}\\
+    \vspace{0.1in}\large{\textit{\hmwkClassInstructor\ - \hmwkClassTime}}
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName\\\small{rumareti@unc.edu}}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+%
+% Various Helper Commands
+%
+
+% Useful for algorithms
+\newcommand{\alg}[1]{\textsc{\bfseries \footnotesize #1}}
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+\newcommand{\question}[1]{\pagebreak\section{Question #1}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+\begin{document}
+
+\maketitle
+
+\question{1}
+
+We apply the cost-benefit principle every day. As students, the choice to attend UNC involved big costs and (hopefully) benefits.
+
+\begin{enumerate}[(a)]
+
+    \item Attending UNC involves large out-of-pocket costs, which are listed
+    on UNC's student aid website:
+    https://studentaid.unc.edu/current/costs/.
+    Using this site, find the total yearly cost of attending UNC as an
+    in-state student.
+
+    \item What is the North Carolina state minimum wage? Use the state minimum wage to calculate the foregone wages that you lose by attending UNC for the year.
+
+    \item Not all costs are measured in dollars! Describe some of the nonmonetary costs of spending a year at UNC.
+
+    \item At UNC, most students graduate after 8 semesters (4 years). Setting aside the non-monetary costs, use the numbers you found
+    above to calculate the opportunity cost of earning your degree. Ignore the possibility of student loans and aid, and pretend that
+    you are paying out of pocket.
+
+    \item Explain the cost-benefit principle in a sentence or two. Incorporating the numbers you found above, then explain your decision
+    to attend UNC this year using the cost-benefit principle.
+\end{enumerate}
+
+\question{2} Your car needs gas before you can go to work this morning. You
+decide to go to the gas station that is out of the way, but where gas
+is \$0.10/gallon cheaper than the gas station on the way to work. This
+gets you into work 10 minutes later than going to the other gas station.
+If your wage is \$20/hour and you have to purchase 20 gallons of gas,
+was this worth it? Why or why not?
+
+\question{3} Tanner and Jasmine are each capable of producing two services: walking dogs or cooking meals. Tanner can cook a meal for 6 people in
+an hour, or walk 1 dog in an hour. Jasmine can cook a meal for 2
+person in an hour, or walk 3 dogs in an hour. They each have 4 hours
+available to use to cook meals or walk dogs.
+\begin{enumerate}[(a)]
+    \item Draw a production possibilities frontier showing Tanner's capacity to cook meals or walk dogs, then add another PPF showing
+Jasmine's ability to cook meals or walk dogs.
+
+    \item Label (including numbers) a point on Tanner's PPF that he could
+produce at without trading. Do the same for a point on Jasmine's
+PPF
+
+    \item Who has the comparative advantage in cooking meals? Who
+has the comparative advantage in walking dogs? Explain both
+answers.
+
+    \item Tanner and Jasmine decide to specialize in producing one thing,
+then trade. What will Tanner choose to produce and what will
+Jasmine choose to produce. Explain your answer.
+
+    \item What can we say about the price that Tanner and Jasmine would
+both be willing pay to trade meals and dog walks?
+
+    \item Suppose that before trading, Tanner and Jasmine each spent two
+hours walking dogs and two hours cooking meals. What are the
+gains to specialization and trade in this situation? Provide an
+example for how the gains from trade could be distributed so
+that Tanner and Jasmine each have more of each service than
+before.
+
+    \item In your example for how the gains of trade could be distributed,
+how much of each good are Tanner and Jasmine trading to one
+another? Do these ”terms of trade” make sense, given what you
+wrote in part (e)?
+\end{enumerate}
+
+\question{4}
+
+Consider the market for a new physical copy of our textbook, \emph{Principles of Economics by Stevenson and Wolfers}. The instructors teaching large classes of ECON 101 at UNC all use this textbook. For each
+of the following situations, decide if demand will shift, if supply will
+shift, or if neither will shift. Then, draw a graph clearly illustrating
+how supply or demand will shift.
+\begin{enumerate}[(a)]
+    \item The price of textbook ink increases.
+
+    \item UNC mandates that all arts and science majors must take ECON
+101.
+
+    \item The price of the textbook rises.
+
+    \item The price of used copies of the old edition of the textbook decrease.
+\end{enumerate}
+
+\question{5}
+
+Consider the daily market for a cup of coffee in Chapel Hill. Market
+demand for coffee is given by the equation \(P = 80 - \frac{1}{2}Q_d\), and market
+supply of coffee is given by \(P = \frac{Q_s}{38}\).
+\begin{enumerate}[(a)]
+    \item If the price of coffee is \$0, how many cups would buyers want to
+consume? How many cups would sellers want to sell?
+
+    \item Calculate the price at which buyers would not want to buy any
+coffee (i.e., \(Q_d = 0\)).
+
+    \item Calculate the equilibrium price of coffee and the quantity of coffee
+cups sold in Chapel Hill every day.
+
+    \item Draw a properly labeled diagram for the market for coffee in
+Chapel Hill.
+
+\end{enumerate}
+
+\end{document}
