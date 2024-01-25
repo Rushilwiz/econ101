@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1706077097 "/home/rushil/school/econ/pset1/pset1.tex" "pset1.pdf" "pset1" 1706077098 0
+["pdflatex"] 1706155513 "/home/rushil/school/econ/pset1/pset1.tex" "pset1.pdf" "pset1" 1706155514 0
   "/etc/texmf/web2c/texmf.cnf" 1693368362 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/rushil/school/econ/pset1/pset1.tex" 1706077096 17821 9b6b30da0aeefb637154e6ef23b47b8b ""
+  "/home/rushil/school/econ/pset1/pset1.tex" 1706155513 18480 73f5313ae8caaca9c27f09e26e37b9f3 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -35,6 +35,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb" 1248133631 32298 c6d25bb16d1eac01ebdc6d7084126a1e ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb" 1248133631 37912 77d683123f92148345f3fc36a38d9ab1 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1248133631 36281 c355509802a035cadc5f15869451dcee ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
@@ -224,9 +225,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1681034085 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1693368379 4623455 fa0568a71dd9a288d6c226ee477506c6 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1693368408 7880218 5644a8bb2704ddc1060e0c139ce5389a ""
-  "pset1.aux" 1706077098 1020 ab85b7c3ef7d212ddd287c92ac8e854d "pdflatex"
-  "pset1.out" 1706077098 485 09e40ec13ebf2ca79a15fce5881ec372 "pdflatex"
-  "pset1.tex" 1706077096 17821 9b6b30da0aeefb637154e6ef23b47b8b ""
+  "pset1.aux" 1706155514 1020 ab85b7c3ef7d212ddd287c92ac8e854d "pdflatex"
+  "pset1.out" 1706155514 485 09e40ec13ebf2ca79a15fce5881ec372 "pdflatex"
+  "pset1.tex" 1706155513 18480 73f5313ae8caaca9c27f09e26e37b9f3 ""
   (generated)
   "pset1.aux"
   "pset1.log"

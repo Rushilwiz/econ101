@@ -163,6 +163,8 @@ We apply the cost-benefit principle every day. As students, the choice to attend
     \item Explain the cost-benefit principle in a sentence or two. Incorporating the numbers you found above, then explain your decision
     to attend UNC this year using the cost-benefit principle.
 
+    The cost-benefit principle states that an individual should take an action if and only if the benefit of taking that action is greater than the cost of taking that action.
+
     For me, the average starting salary for a computer science major is ~\$80,000. After working for two years leaving college my benefit would outweigh the cost of attending UNC. I also enjoy the social aspect of college and the opportunity to learn new things. 
 
 \end{enumerate}
@@ -187,18 +189,6 @@ an hour, or walk 1 dog in an hour. Jasmine can cook a meal for 2
 person in an hour, or walk 3 dogs in an hour. They each have 4 hours
 available to use to cook meals or walk dogs.
 
-\begin{center}
-    \begin{tabular}{ |c|c|c| } 
-     \hline
-     Opportunity Cost & Meals Cooked & Dogs Walked \\ 
-     \hline
-    Tanner & \(\frac{1}{6}\) dog & 6 meals \\
-    \hline
-    Jasmine & \(\frac{3}{2}\) dog & \(\frac{2}{3}\) meal \\
-    \hline
-    \end{tabular}
-\end{center}
-
 \begin{enumerate}[(a)]
     \item Draw a production possibilities frontier showing Tanner's capacity to cook meals or walk dogs, then add another PPF showing Jasmine's ability to cook meals or walk dogs.
     
@@ -207,19 +197,19 @@ available to use to cook meals or walk dogs.
             title={Production Possibilities Frontier},
             xlabel={Number of Meals Cooked},
             ylabel={Number of Dogs Walked},
-            xmin=0, xmax=7,
-            ymin=0, ymax=4,
+            xmin=0, xmax=28,
+            ymin=0, ymax=16,
             axis lines=left,
             grid=both,
             legend pos=outer north east,
         ]
         
         % Tanner's PPF
-        \addplot[domain=0:6, color=blue, thick] {-x/6 + 1};
+        \addplot[domain=0:24, color=blue, thick] {4-1/6*x};
         \addlegendentry{Tanner}
         
         % Jasmine's PPF
-        \addplot[domain=0:2, color=red, thick] {-3*x/2 + 3};
+        \addplot[domain=0:24, color=red, thick] {12-3/2*x};
         \addlegendentry{Jasmine}
         
         \end{axis}
@@ -268,6 +258,20 @@ PPF
     \item Who has the comparative advantage in cooking meals? Who
 has the comparative advantage in walking dogs? Explain both
 answers.
+
+
+\begin{center}
+    \begin{tabular}{ |c|c|c| } 
+     \hline
+     Opportunity Cost & Meals Cooked & Dogs Walked \\ 
+     \hline
+    Tanner & \(\frac{1}{6}\) dog & 6 meals \\
+    \hline
+    Jasmine & \(\frac{3}{2}\) dog & \(\frac{2}{3}\) meal \\
+    \hline
+    \end{tabular}
+\end{center}
+
 
     Tanner has the comparative advantage in cooking meals because he can cook 6 meals in an hour while Jasmine can only cook 2 meals in an hour. Jasmine has the comparative advantage in walking dogs because she can walk 3 dogs in an hour while Tanner can only walk 1 dog in an hour.
 
@@ -356,13 +360,13 @@ how supply or demand will shift.
             legend pos=outer north east,
         ]
         
-        \addplot[domain=0:10, color=blue, thick] {-2*x + 12};
+        \addplot[domain=0:10, color=blue, thick] {2*x};
         \addlegendentry{Old Supply}
         
-        \addplot[domain=0:10, color=red, thick] {-2*x + 8};
+        \addplot[domain=0:10, color=red, thick] {2*x + 2};
         \addlegendentry{New Supply}
 
-        \addplot[mark=*] coordinates {(3.5,5)};
+        \addplot[mark=*] coordinates {(2.5,5)};
         \addplot[mark=*] coordinates {(1.5,5)};
 
         \end{axis}
@@ -401,12 +405,12 @@ how supply or demand will shift.
     \pagebreak
     \item The price of the textbook rises.
 
-    Since this situation affects the price of the good, there won't be a shift in either demand or supply curves, but a movement up the demand curve (decrease in quantity demanded).
+    Since this situation affects the price of the good, there won't be a shift in either demand or supply curves, but a movement up the demand curve (decrease in quantity demanded) and a movement up the supply curve (decrease in quantity supplied).
 
     \begin{tikzpicture}
         \begin{axis}[
-            title={Demand Curve},
-            xlabel={Quantity Demanded},
+            title={Market Curve},
+            xlabel={Quantity},
             ylabel={Price},
             yticklabel=\empty,
             xticklabel=\empty,
@@ -418,12 +422,19 @@ how supply or demand will shift.
         ]
         
         \addplot[mark=*] coordinates {(5,5)};
-        \addlegendentry{Old Demand}
+        \addlegendentry{Old Equilibrium}
 
         \addplot[mark=*, color=red] coordinates {(3,7)};
         \addlegendentry{New Demand}
 
+        \addplot[mark=*, color=orange] coordinates {(7,7)};
+        \addlegendentry{New Supply}
+
         \addplot[domain=0:10, color=blue, thick] {-x+10};
+        \addlegendentry{Demand}
+
+        \addplot[domain=0:10, color=purple, thick] {x};
+        \addlegendentry{Supply}
 
         \end{axis}
     \end{tikzpicture}
@@ -462,6 +473,8 @@ how supply or demand will shift.
 \end{enumerate}
 
 \question{5}
+Consider the daily market for a cup of coffee in Chapel Hill. Market demand for coffee is given by the equation \(P = 80 -\frac{1}{2}Q_d\), and market supply of coffee is given by \(P = \frac{Q_s}{38}\).
+
 \begin{enumerate}[(a)]
     \item If the price of coffee is \$0, how many cups would buyers want to
 consume? How many cups would sellers want to sell?
