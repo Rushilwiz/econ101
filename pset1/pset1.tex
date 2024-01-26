@@ -348,9 +348,9 @@ how supply or demand will shift.
 
     \begin{tikzpicture}
         \begin{axis}[
-            title={Supply Curve},
+            title={Market Curve},
             ylabel={Price},
-            xlabel={Quantity Supplied},
+            xlabel={Quantity},
             yticklabel=\empty,
             xticklabel=\empty,
             xmin=0, xmax=10,
@@ -360,14 +360,21 @@ how supply or demand will shift.
             legend pos=outer north east,
         ]
         
-        \addplot[domain=0:10, color=blue, thick] {2*x};
+
+        \addplot[mark=*, color=orange] coordinates {(4,6)};
+        \addlegendentry{New Equilibrium}
+
+
+        \addplot[domain=0:10, color=blue, thick] {x};
         \addlegendentry{Old Supply}
         
-        \addplot[domain=0:10, color=red, thick] {2*x + 2};
+        \addplot[domain=0:10, color=red, thick] {x + 2};
         \addlegendentry{New Supply}
 
-        \addplot[mark=*] coordinates {(2.5,5)};
-        \addplot[mark=*] coordinates {(1.5,5)};
+        \addplot[domain=0:10, color=black, thick] {-x+10};
+        \addlegendentry{Demand}
+
+        \addplot[mark=*] coordinates {(5,5)};
 
         \end{axis}
     \end{tikzpicture}
@@ -379,9 +386,9 @@ how supply or demand will shift.
 
     \begin{tikzpicture}
         \begin{axis}[
-            title={Demand Curve},
+            title={Market Curve},
             ylabel={Price},
-            xlabel={Quantity Demanded},
+            xlabel={Quantity},
             yticklabel=\empty,
             xticklabel=\empty,
             xmin=0, xmax=10,
@@ -390,15 +397,21 @@ how supply or demand will shift.
             grid=none,
             legend pos=outer north east,
         ]
-        
-        \addplot[domain=0:10, color=blue, thick] {-2*x + 12};
+
+        \addplot[domain=0:10, color=black, thick] {x};
+        \addlegendentry{Supply}
+
+        \addplot[domain=0:10, color=blue, thick] {-x + 8};
         \addlegendentry{Old Demand}
         
-        \addplot[domain=0:10, color=red, thick] {-2*x + 16};
+        \addplot[domain=0:10, color=red, thick] {-x + 10};
         \addlegendentry{New Demand}
 
-        \addplot[mark=*] coordinates {(3.5,5)};
-        \addplot[mark=*] coordinates {(5.5,5)};
+
+        \addplot[mark=*, color=orange] coordinates {(5,5)};
+        \addlegendentry{New Equilibrium}
+
+        \addplot[mark=*] coordinates {(4,4)};
 
         \end{axis}
     \end{tikzpicture}
@@ -446,9 +459,9 @@ how supply or demand will shift.
 
     \begin{tikzpicture}
         \begin{axis}[
-            title={Demand Curve},
+            title={Market Curve},
             ylabel={Price},
-            xlabel={Quantity Demanded},
+            xlabel={Quantity},
             yticklabel=\empty,
             xticklabel=\empty,
             xmin=0, xmax=10,
@@ -457,15 +470,21 @@ how supply or demand will shift.
             grid=none,
             legend pos=outer north east,
         ]
-        
-        \addplot[domain=0:10, color=blue, thick] {-2*x + 12};
-        \addlegendentry{Old Demand}
-        
-        \addplot[domain=0:10, color=red, thick] {-2*x + 8};
-        \addlegendentry{New Demand}
 
-        \addplot[mark=*] coordinates {(3.5,5)};
-        \addplot[mark=*] coordinates {(1.5,5)};
+        \addplot[domain=0:10, color=black, thick] {x};
+        \addlegendentry{Supply}
+
+        \addplot[domain=0:10, color=red, thick] {-x + 8};
+        \addlegendentry{New Demand}
+        
+        \addplot[domain=0:10, color=blue, thick] {-x + 10};
+        \addlegendentry{Old Demand}
+
+
+        \addplot[mark=*, color=orange] coordinates {(4,4)};
+        \addlegendentry{New Equilibrium}
+
+        \addplot[mark=*] coordinates {(5,5)};
 
         \end{axis}
     \end{tikzpicture}
