@@ -226,11 +226,17 @@ Consider the daily market for a cup of coffee in Chapel Hill. Market demand for 
 
 \question{2}
 
-Economists have been interested in markets for illegal and addictive goods for a long time. One question that many economists have asked is whether \textcolor{ForestGreen}{marijuana} and alcohol are substitutes or complements. After Oregon legalized \textcolor{ForestGreen}{marijuana}, Ben began to collect data on the alcohol and \textcolor{ForestGreen}{marijuana} markets to try to answer this question. He found that in August of 2019, the price of an ounce of \textcolor{ForestGreen}{marijuana} fell by 5\%, and that alcohol sales rose by 7\% directly afterwards.
+Economists have been interested in markets for illegal and addictive goods for a long time. One question that many economists have asked is whether \textcolor{OliveGreen}{marijuana} and alcohol are substitutes or complements. After Oregon legalized \textcolor{OliveGreen}{marijuana}, Ben began to collect data on the alcohol and \textcolor{OliveGreen}{marijuana} markets to try to answer this question. He found that in August of 2019, the price of an ounce of \textcolor{OliveGreen}{marijuana} fell by 5\%, and that alcohol sales rose by 7\% directly afterwards.
 
 \begin{enumerate}[(a)]
-    \item Calculate the \textcolor{ForestGreen}{marijuana} cross-price elasticity of demand for alcohol.
-    \item What does Ben's data indicate about the relationship between alcohol and \textcolor{ForestGreen}{marijuana}?
+    \item Calculate the \textcolor{OliveGreen}{marijuana} cross-price elasticity of demand for alcohol.
+    \begin{align*}
+        \text{Cross-Price Elasticity of Demand} &= \frac{\text{Percentage Change in Quantity Demanded of Alcohol}}{\text{Percentage Change in Price of \textcolor{OliveGreen}{marijuana}}}\\
+         &= \frac{0.07}{-0.05} = -1.4
+    \end{align*}
+    \item What does Ben's data indicate about the relationship between alcohol and \textcolor{OliveGreen}{marijuana}?
+    
+    Ben's data indicates that alcohol and \textcolor{OliveGreen}{marijuana} are complements, as the cross-price elasticity of demand is negative, which means as the price of \textcolor{OliveGreen}{marijuana} falls, and quantity demanded of \textcolor{OliveGreen}{marijuana} rises, the quantity demanded of alcohol also rises.
 \end{enumerate}
 
 \pagebreak
@@ -241,9 +247,157 @@ Consider the market for laptops during 2020, after the COVID pandemic began. For
 
 \begin{enumerate}[(a)]
     \item The government provides most U.S. adults with a \$1,200 stimulus check.
+    
+    Since the government is providing most U.S. adults with a \$1,200 stimulus check, this will cause the demand curve to shift to the right (up), as people will have more money to spend on laptops. This will cause the equilibrium price to rise, and the equilibrium quantity to rise.
+
+    \begin{tikzpicture}
+        \begin{axis}[
+            title={Market Curve},
+            ylabel={Price},
+            xlabel={Quantity},
+            yticklabel=\empty,
+            xticklabel=\empty,
+            xmin=0, xmax=10,
+            ymin=0, ymax=10,
+            axis lines=left,
+            grid=none,
+            legend pos=outer north east,
+        ]
+        
+
+        \addplot[mark=*, color=orange] coordinates {(6,6)};
+        \addlegendentry{New Equilibrium}
+
+
+        \addplot[domain=0:10, color=black, thick] {x};
+        \addlegendentry{Supply}
+        
+        \addplot[domain=0:10, color=blue, thick] {-x+10};
+        \addlegendentry{Old Demand}
+
+        \addplot[domain=0:10, color=red, thick] {-x+12};
+        \addlegendentry{New Demand}
+
+        \addplot[mark=*] coordinates {(5,5)};
+
+        \end{axis}
+    \end{tikzpicture}
+
+
     \item A global semiconductor shortage causes the price of semiconductors, a crucial component used in laptops, to rise dramatically.
+    
+
+    Since we see a rise in the price of semiconductors, this will cause the supply curve to shift to the left (up), as the cost of production for laptops will rise. This will cause the equilibrium price to rise, and the equilibrium quantity to fall.
+
+    \begin{tikzpicture}
+        \begin{axis}[
+            title={Market Curve},
+            ylabel={Price},
+            xlabel={Quantity},
+            yticklabel=\empty,
+            xticklabel=\empty,
+            xmin=0, xmax=10,
+            ymin=0, ymax=10,
+            axis lines=left,
+            grid=none,
+            legend pos=outer north east,
+        ]
+        
+
+        \addplot[mark=*, color=orange] coordinates {(4,6)};
+        \addlegendentry{New Equilibrium}
+
+        \addplot[domain=0:10, color=blue, thick] {-x+10};
+        \addlegendentry{Demand}
+
+        \addplot[domain=0:10, color=black, thick] {x};
+        \addlegendentry{Old Supply}
+
+        \addplot[domain=0:10, color=red, thick] {x+2};
+        \addlegendentry{New Supply}
+
+        \addplot[mark=*] coordinates {(5,5)};
+        
+        \end{axis}
+    \end{tikzpicture}
     \item The government provides most U.S. adults with a \$1,200 stimulus check. At the same time, a global semiconductor shortage causes the price of semiconductors, a crucial component used in laptops, to rise dramatically.
+    
+    Since both events are occurring at the same time, the demand curve will shift to the right (up) due to the stimulus check, and the supply curve will shift to the left (up) due to the rise in the price of semiconductors. This will cause the equilibrium price to rise, and an ambiguous effect on the equilibrium quantity.
+
+    \begin{tikzpicture}
+        \begin{axis}[
+            title={Market Curve},
+            ylabel={Price},
+            xlabel={Quantity},
+            yticklabel=\empty,
+            xticklabel=\empty,
+            xmin=0, xmax=10,
+            ymin=0, ymax=10,
+            axis lines=left,
+            grid=none,
+            legend pos=outer north east,
+        ]
+        
+
+        \addplot[mark=*, color=orange] coordinates {(5,7)};
+        \addlegendentry{New Equilibrium}
+
+        \addplot[domain=0:10, color=blue, thick] {-x+10};
+        \addlegendentry{Old Demand}
+
+        \addplot[domain=0:10, color=red, thick] {-x+12};
+        \addlegendentry{New Demand}
+
+        \addplot[domain=0:10, color=black, thick] {x};
+        \addlegendentry{Old Supply}
+
+        \addplot[domain=0:10, color=green, thick] {x+2};
+        \addlegendentry{New Supply}
+
+        \addplot[mark=*] coordinates {(5,5)};
+        
+        \end{axis}
+    \end{tikzpicture}
+
     \item A large percentage of the U.S. workforce begins to work from home for the duration of the pandemic. At the same time, laptop companies develop new software that lets the machines in their factories make twice as many laptops in a day.
+    
+    Since a large percentage of the U.S. workforce begins to work from home, this will cause the demand curve to shift to the right (up), as people will need laptops to work from home. At the same time, the supply curve will shift to the right (down), as the cost of production for laptops will fall. This will cause the equilibrium quantity to rise, and an ambiguous effect on the equilibrium price.
+
+    \begin{tikzpicture}
+        \begin{axis}[
+            title={Market Curve},
+            ylabel={Price},
+            xlabel={Quantity},
+            yticklabel=\empty,
+            xticklabel=\empty,
+            xmin=0, xmax=10,
+            ymin=0, ymax=10,
+            axis lines=left,
+            grid=none,
+            legend pos=outer north east,
+        ]
+        
+
+        \addplot[mark=*, color=orange] coordinates {(7,5)};
+        \addlegendentry{New Equilibrium}
+
+        \addplot[domain=0:10, color=blue, thick] {-x+10};
+        \addlegendentry{Old Demand}
+
+        \addplot[domain=0:10, color=red, thick] {-x+12};
+        \addlegendentry{New Demand}
+
+        \addplot[domain=0:10, color=black, thick] {x};
+        \addlegendentry{Old Supply}
+
+        \addplot[domain=0:10, color=green, thick] {x-2};
+        \addlegendentry{New Supply}
+
+        \addplot[mark=*] coordinates {(5,5)};
+        
+        \end{axis}
+    \end{tikzpicture}
+
 \end{enumerate}
 
 \pagebreak
@@ -254,10 +408,109 @@ Consider the market for camp coolers. The market supply of coolersis \(Q_s = 4P\
 
 \begin{enumerate}[(a)]
     \item Solve for equilibrium price and quantity in the market for camp coolers, and draw a graph illustrating this market.
+    
+    \begin{align*}
+        4P &= 240 - 4P\\
+        8P &= 240\\
+        P &= 30\\
+        Q &= 240 - 4(30)\\
+        Q &= 120
+    \end{align*}
+
+    The equilibrium price of camp coolers is \$30, and the equilibrium quantity of camp coolers sold is 120.
+
+    \begin{tikzpicture}
+        \begin{axis}[
+            title={Market Curve},
+            ylabel={Price},
+            xlabel={Quantity},
+            xmin=0, xmax=240,
+            ymin=0, ymax=60,
+            axis lines=left,
+            grid=none,
+            legend pos=outer north east,
+        ]
+
+        \addplot[domain=0:240, color=blue, thick] {x/4};
+        \addlegendentry{Supply}
+
+        \addplot[domain=0:240, color=red, thick] {60-x/4};
+        \addlegendentry{Demand}
+
+        \addplot[mark=*, color=black] coordinates {(120,30)} node[right, pos=3] {(120,\$30)};
+        \addlegendentry{Equilibrium}
+        \end{axis}
+    \end{tikzpicture}
+
     \item The government imposes a \$5 tax on those selling camp coolers. How will this change the supply function for coolers? (Hint: you may want to rearrange the supply function so that it is in the form “P=...”, like the example from our slides)
+    
+    \begin{align*}
+        P &= \frac{Q^s}{4}\\
+        P &= \frac{Q^s_{tax}}{4} + 5
+    \end{align*}
+
+    This will cause the supply function to shift to the left (up) by \$5 since the cost to produce coolers has increased by \$5.
+    \pagebreak
     \item Solve for the new equilibrium price and quantity sold after the tax is implemented.
+    
+    \begin{align*}
+        \frac{Q_{tax}}{4} + 5 &= 60 - \frac{Q_{tax}}{4}\\
+        \frac{Q_{tax}}{4} + \frac{Q_{tax}}{4} &= 60 - 5\\
+        \frac{Q_{tax}}{2} &= 55\\
+        Q_{tax} &= 110\\
+        P_{tax} &= \frac{130}{4} - 5\\
+        P_{tax} &= 32.5
+    \end{align*}
+
+    The new equilibrium price of camp coolers is \$32.5, and the new equilibrium quantity of camp coolers sold is 110.
+
     \item Modify your graph from part (a) to show the impact of the tax.
+    
+    \begin{tikzpicture}
+        \begin{axis}[
+            title={Market Curve},
+            ylabel={Price},
+            xlabel={Quantity},
+            xmin=0, xmax=240,
+            ymin=0, ymax=60,
+            axis lines=left,
+            grid=none,
+            legend pos=outer north east,
+        ]
+
+        \addplot[domain=0:240, color=blue, thick] {x/4};
+        \addlegendentry{Supply}
+
+        \addplot[domain=0:240, color=red, thick] {60-x/4};
+        \addlegendentry{Demand}
+
+        \addplot[mark=*, color=black] coordinates {(120,30)} node[right, pos=3] {(120,\$30)};
+        \addlegendentry{Equilibrium}
+
+        \addplot[domain=0:240, color=green, thick] {x/4 + 5};
+        \addlegendentry{New Supply}
+
+        \addplot[mark=*, color=orange] coordinates {(110,32.5)} node[left, pos=3] {(110,\$32.5)};
+        \addlegendentry{New Equilibrium}
+        \end{axis}
+
+    \end{tikzpicture}
+    \pagebreak
     \item Calculate how much revenue the government earns from the tax, and the deadweight loss caused by the tax.
+    
+    \begin{align*}
+        \text{Revenue} &= \text{Tax} \times \text{Quantity}\\
+        \text{Revenue} &= \$5 \times 110\\
+        \text{Revenue} &= \$550
+    \end{align*}
+    \begin{align*}
+        \text{Deadweight Loss} &= \frac{1}{2} \times \text{Tax} \times \text{Change in Quantity}\\
+        \text{Deadweight Loss} &= \frac{1}{2} \times \$5 \times (120 - 110)\\
+        \text{Deadweight Loss} &= \frac{1}{2} \times \$5 \times 10\\
+        \text{Deadweight Loss} &= \frac{1}{2} \times \$50\\
+        \text{Deadweight Loss} &= \$25
+    \end{align*}
+
 \end{enumerate}
 
 \pagebreak
@@ -269,7 +522,8 @@ For this question, consider the market for gasoline in North Carolina. Suppose t
 \end{align*}
 
 \begin{enumerate}[(a)]
-    \item Use these supply and demand functions to calculate the market     equilibrium for gasoline in Oregon.
+    \item Use these supply and demand functions to calculate the market equilibrium for gasoline in Oregon.
+    
     \item Calculate producer and consumer surplus in the market for gasoline in North Carolina. For the rest of this question, assume also that each gallon of gasoline creates an external cost of \$0.50, due to increased healthcare     costs for those individuals who breath in engine exhaust. Note that as a result, the social supply function for gasoline in North Carolina would be:
     \begin{align*}
         S_{social}(p) = 30,000p - 15,000
