@@ -226,7 +226,7 @@ Consider the daily market for a cup of coffee in Chapel Hill. Market demand for 
 
 \question{2}
 
-Economists have been interested in markets for illegal and addictive goods for a long time. One question that many economists have asked is whether \textcolor{OliveGreen}{marijuana} and alcohol are substitutes or complements. After Oregon legalized \textcolor{OliveGreen}{marijuana}, Ben began to collect data on the alcohol and \textcolor{OliveGreen}{marijuana} markets to try to answer this question. He found that in August of 2019, the price of an ounce of \textcolor{OliveGreen}{marijuana} fell by 5\%, and that alcohol sales rose by 7\% directly afterwards.
+Economists have been interested in markets for illegal and addictive goods for a long time. One question that many economists have asked is whether \textcolor{OliveGreen}{marijuana} and alcohol are substitutes or complements. After North Carolina legalized \textcolor{OliveGreen}{marijuana}, Ben began to collect data on the alcohol and \textcolor{OliveGreen}{marijuana} markets to try to answer this question. He found that in August of 2019, the price of an ounce of \textcolor{OliveGreen}{marijuana} fell by 5\%, and that alcohol sales rose by 7\% directly afterwards.
 
 \begin{enumerate}[(a)]
     \item Calculate the \textcolor{OliveGreen}{marijuana} cross-price elasticity of demand for alcohol.
@@ -522,18 +522,109 @@ For this question, consider the market for gasoline in North Carolina. Suppose t
 \end{align*}
 
 \begin{enumerate}[(a)]
-    \item Use these supply and demand functions to calculate the market equilibrium for gasoline in Oregon.
+    \item Use these supply and demand functions to calculate the market equilibrium for gasoline in North Carolina.
     
-    \item Calculate producer and consumer surplus in the market for gasoline in North Carolina. For the rest of this question, assume also that each gallon of gasoline creates an external cost of \$0.50, due to increased healthcare     costs for those individuals who breath in engine exhaust. Note that as a result, the social supply function for gasoline in North Carolina would be:
+    \begin{align*}
+        S(p) &= D(p)\\
+        30,000P &= 120,000 - 20,000P\\
+        50,000P &= 120,000\\
+        P &= 2.4\\
+        Q &= 120,000 - 20,000(2.4)\\
+        Q &= 72,000
+    \end{align*}
+
+    The equilibrium price of gasoline in North Carolina is \$2.40, and the equilibrium quantity of gasoline sold is 72,000 gallons.
+    
+    \item Calculate producer and consumer surplus in the market for gasoline in North Carolina.
+
+    \begin{align*}
+        \text{Consumer Surplus} &= \frac{1}{2} \times 72,000 \times (6 - 2.4)\\
+        \text{Consumer Surplus} &= \frac{1}{2} \times 72,000 \times 3.6\\
+        \text{Consumer Surplus} &= \$129,600\\
+        \text{Producer Surplus} &= \frac{1}{2} \times 72,000 \times (2.4 - 0)\\
+        \text{Producer Surplus} &= \frac{1}{2} \times 72,000 \times 2.4\\
+        \text{Producer Surplus} &= \$86,400
+    \end{align*}
+
+    For the rest of this question, assume also that each gallon of gasoline creates an external cost of \$0.50, due to increased healthcare costs for those individuals who breath in engine exhaust. Note that as a result, the social supply function for gasoline in North Carolina would be:
+
     \begin{align*}
         S_{social}(p) = 30,000p - 15,000
     \end{align*}
+
     \item What kind of externality is present in the market for gasoline? Will this externality cause the private market to over or underproduce gasoline?
-    \item Please calculate the social optimum in Oregon's gasoline market. Remember that, since there are no external benefits, the social demand line is equal to the private demand line.
-    \item Draw a graph illustrating the social optimum and the private equilibrium in the market for gasoline in Oregon. Indicate which part of your graph represents the deadweight loss caused by this externality.
+    
+    There is a negative externality present in the market for gasoline, as the social supply function is greater than the private supply function. This externality will cause the private market to overproduce gasoline.
+    \pagebreak
+    \item Please calculate the social optimum in North Carolina's gasoline market. Remember that, since there are no external benefits, the social demand line is equal to the private demand line.
+    
+    \begin{align*}
+        S_{social}(p) &= D(p)\\
+        30,000P - 15,000 &= 120,000 - 20,000P\\
+        50,000P &= 135,000\\
+        P &= 2.7\\
+        Q &= 120,000 - 20,000(2.7)\\
+        Q &= 66,000
+    \end{align*}
+
+    The social optimum price of gasoline in North Carolina is \$2.70, and the social optimum quantity of gasoline sold is 66,000 gallons.
+
+    \item Draw a graph illustrating the social optimum and the private equilibrium in the market for gasoline in North Carolina. Indicate which part of your graph represents the deadweight loss caused by this externality.
+    
+
+    \begin{tikzpicture}
+        \begin{axis}[
+            title={Market Curve},
+            ylabel={Price},
+            xlabel={Quantity (in 1k gallons)},
+            xmin=0, xmax=120,
+            ymin=0, ymax=6,
+            axis lines=left,
+            grid=none,
+            legend pos=outer north east,
+        ]
+
+        \addplot[domain=0:120, color=blue, thick] {x/30};
+        \addlegendentry{Private Supply}
+
+        \addplot[domain=0:120, color=red, thick] {6-x/20};
+        \addlegendentry{Private Demand}
+
+        \addplot[mark=*, color=black] coordinates {(72,2.4)} node[right, pos=3] {(72,\$2.4)};
+        \addlegendentry{Equilibrium}
+
+        \addplot[domain=0:120, color=green, thick] {x/30 + 0.5};
+        \addlegendentry{Social Supply}
+
+        \addplot[mark=*, color=orange] coordinates {(66,2.7)} node[left, pos=3] {(66,\$2.7)};
+        \addlegendentry{Social Equilibrium}
+
+        \draw[dashed, fill=red, opacity=0.5] (66,270)
+            -- (72,290)
+            -- (72,240)
+            --cycle;
+        \node[above] at (72,290) {Deadweight Loss};
+
+        \end{axis}
+    \end{tikzpicture}
+
     \item Now calculate the value of deadweight loss that you identified in part (e).
+    
+    \begin{align*}
+        \text{Deadweight Loss} &= \frac{1}{2} \times (72000 - 66000) \times (0.5)\\
+        \text{Deadweight Loss} &= \frac{1}{2} \times 6000 \times 0.5\\
+        \text{Deadweight Loss} &= \$1500
+    \end{align*}
+
+    The value of the deadweight loss is \$1500.
+
     \item If the government wants to solve this externality problem the 'normal' way, would it involve using a tax or a subsidy? How large would that tax or subsidy need to be?
+    
+    The government would need to use a tax to solve this externality problem. The tax would need to be \$0.30, as the difference between the social optimum price and the private equilibrium price is \$0.30.
+
     \item What is one alternative way that the government could try to solve this externality problem? Explain in a sentence or two how your alternate solution would cause gasoline suppliers to internalize their externality.
+    
+    The government could also use a cap-and-trade system to solve this externality problem. This would cause gasoline suppliers to internalize their externality by allowing them to trade permits to pollute, which would allow them to find the most efficient way to reduce their pollution.
 
 \end{enumerate}
 
