@@ -1,0 +1,366 @@
+\documentclass{article}
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{multirow}
+
+\usetikzlibrary{automata,positioning}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{\hmwkClassTime (\hmwkClassInstructor): \hmwkTitle}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+
+%
+% Create Problem Sections
+%
+
+\newcommand{\enterProblemHeader}[1]{
+    \nobreak\extramarks{}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+    \nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+}
+
+\newcommand{\exitProblemHeader}[1]{
+    \nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+    \stepcounter{#1}
+    \nobreak\extramarks{Problem \arabic{#1}}{}\nobreak{}
+}
+
+\setcounter{secnumdepth}{0}
+\newcounter{partCounter}
+\newcounter{homeworkProblemCounter}
+\setcounter{homeworkProblemCounter}{1}
+\nobreak\extramarks{Problem \arabic{homeworkProblemCounter}}{}\nobreak{}
+
+\newcommand{\hmwkTitle}{Problem Set 3}
+\newcommand{\hmwkDueDate}{March 17, 2024}
+\newcommand{\hmwkClass}{Introduction to Economics}
+\newcommand{\hmwkClassTime}{ECON 101}
+\newcommand{\hmwkClassInstructor}{Robert McDonough}
+\newcommand{\hmwkAuthorName}{\textbf{Rushil Umaretiya}}
+
+%
+% Title Page
+%
+
+\title{
+    \vspace{2in}
+    \textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+    \normalsize\vspace{0.1in}\small{\textbf{Due\ on\ \hmwkDueDate\ at 11:59pm}}\\
+    \normalsize\text{Tuesday/Thursday 3:30-4:45, Genome Sciences 100}\\
+    \vspace{0.1in}\large{\textit{\hmwkClassInstructor\ - \hmwkClassTime}}
+    \vspace{3in}
+}
+
+\author{\hmwkAuthorName\\\small{rumareti@unc.edu}}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+%
+% Various Helper Commands
+%
+
+% Useful for algorithms
+\newcommand{\alg}[1]{\textsc{\bfseries \footnotesize #1}}
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+\newcommand{\question}[1]{\pagebreak\section{Question #1}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+\begin{document}
+
+\maketitle
+
+\question{1}
+
+The Federal Reserve Economic Data (FRED) database is one of the best sources for finding national economic data. You can access FRED data here. Using FRED, you will explore several pieces of data on the US economy and apply some of the basic definitions we covered in class.
+
+\begin{enumerate}[(a)]
+    \item Find the real GDP per capita data series on FRED. Since the data series started until today, how much has real GDP per capita
+    grown in the United States? How much did real GDP per capita fall when the COVID pandemic began,from 2020 Q1 to Q2?
+
+    \begin{align*}
+        \text{Real GDP per capita growth} &= \frac{\text{Real GDP per capita in 2023} - \text{Real GDP per capita in 1947}}{\text{Real GDP per capita in 1947}} \\
+        \text{Real GDP per capita growth} &= \frac{67,483 - 15,248}{15,248} \times 100 = 342.6\%
+    \end{align*}
+
+    \begin{align*}
+        \text{Real GDP per capita fall} &= \frac{\text{Real GDP per capita in 2020 Q2} - \text{Real GDP per capita in 2020 Q1}}{\text{Real GDP per capita in 2020 Q1}} \\
+        \text{Real GDP per capita fall} &= \frac{57,383 - 62,333}{62,333} \times 100 = -7.9\%
+    \end{align*}
+    
+    \item Find the unemployment rate data series on FRED. What is the highest recorded unemployment rate in U.S. history, and when
+    did it happen? Do you notice any relationship between when the unemployment rates rises, and when real GDP per capita is falling? Why do you think this is?
+
+    The highest recorded unemployment rate in U.S. history was 14.8\% in April 2020. There is a relationship between when the unemployment rates rises, and when real GDP per capita is falling. This is because when the economy is in a recession, firms are not able to produce as much, and thus they lay off workers. This leads to a rise in unemployment rates.
+
+    \item Next you’re going to find a consumer price index. There are a lot
+    of different price indexes, because there are a lot of different ways
+    of asking “how much does the average person spend?” On FRED,
+    find the “Consumer Price Index for All Urban Consumers: All
+    Items in U.S. City Average.” Make sure that the units for the
+    graph says “Index 1982-1984=100, Seasonally Adjusted.” (This
+    should be the default) What is the CPI value for July 2023?
+    Ignoring the “seasonally adjusted” part, what does it mean to
+    say that “Index 1982-1984=100”? With that in mind, what does
+    the number you found mean?
+
+    The CPI value for July 2023 is 304.628. The unit means that 1982-1984 is the base year, and the CPI is set to 100 in that year. The number 304.628 means that the average price level in July 2023 is 204.628\% higher than the average price level in 1982-1984.
+\end{enumerate}
+
+\pagebreak
+
+\question{2}
+
+Consider the calculation of gross domestic product (GDP) for the
+United States. For each of the following goods or services, indicate
+where it is recorded in the national income and product accounts:
+C (consumption), I (investment), G (government spending), EX (exports), IM (imports), or Ø (not recorded). If more than one category
+apply put all that apply. Give a one sentence explanation for each.
+
+\begin{enumerate}[(a)]
+    \item Farmers in California's Imperial Valley sell alfalfa to buyers in China.
+    
+    \textbf{EX} - This is recorded as an export because the alfalfa is being sold to a foreign country.
+
+    \item The U.S. federal government sends \$1,200 to all adults in the U.S.
+    
+    \textbf{G} - This is recorded as government spending because the government is spending money to send it to adults in the U.S.
+
+    \item Casey builds a new home on land that she owns.
+    
+    \textbf{I} - This is recorded as investment because the new home is an investment in capital.
+
+    \item IBM (in Research Triangle Park, NC) buys a new quantum supercomputer from Quantinuum (based in Cambridge, United Kingdom) to help with their R\&D programs.
+
+    \textbf{I} \& \textbf{IM} - This is recorded as investment because IBM is buying a new quantum supercomputer. This is also recorded as an import because the supercomputer is being bought from a foreign country. (They will cancel out.)
+
+    \item A UNC student living in an apartment north of campus pays their rent.
+    
+    \textbf{C} - This is recorded as consumption because the student is paying for rent.
+
+    \item The small firm Boutique Academic buys chains that will be used to make necklaces to sell to customers online.
+    
+    \textbf{Ø} - This is not recorded because the chains are an intermediate good and are not sold to customers.
+
+    \item UNC—a public university—renovates Stacy Residence Hall with new HVAC systems.
+    
+    \textbf{G} - This is recorded as government spending because UNC is a public university and is spending money to renovate Stacy Residence Hall.
+
+    \item Robert buys a used Xbox 360, to replay his old video games and feel young again.
+    
+    \textbf{Ø} - This is not recorded because the Xbox 360 is a used good and is not being sold by a firm, and Robert should know he is not getting any younger.
+
+\end{enumerate}
+
+\pagebreak
+
+\question{3}
+
+The following table shows the real GDP per capita of Austria and Malawi for each decade from 1980 to 2020, in dollars.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{l|l|l}
+    \textbf{Decade} & Austria  & Malawi  \\ \hline \hline
+    1980   & \$25,521 & \$389   \\
+    1990   & \$31,342 & \$534   \\
+    2000   & \$38,842 & \$755   \\
+    2010   & \$43,335 & \$1,238 \\
+    2020   & \$43,455 & \$1,814
+    \end{tabular}
+\end{table}
+
+\begin{enumerate}[(a)]
+    \item Calculate the growth rate in each country between each decade
+    in the table.
+
+    \begin{align*}
+        \text{Growth Rate} = \frac{\text{New Value} - \text{Old Value}}{\text{Old Value}} \times 100
+    \end{align*}
+
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{l|l|l}
+        \textbf{Decade} & Austria  & Malawi  \\ \hline \hline
+        1980-1990   & 22.81\% & 37.28\%   \\
+        1990-2000   & 23.93\% & 41.39\%   \\
+        2000-2010   & 11.57\% & 63.97\% \\
+        2010-2020   & 00.28\% & 46.53\%
+        \end{tabular}
+    \end{table}
+    
+    \item Using the rule of 70, calculate how many decades it would take
+    for real GDP per capita to double from its 2020 value for each
+    country.
+
+    \begin{align*}
+        \text{Doubling Time} = \frac{70}{\text{Growth Rate}}
+    \end{align*}
+
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{l|l|l}
+        \textbf{Country} & Austria  & Malawi  \\ \hline \hline
+        \text{Doubling Time (decades)} & 250 & 1.5
+        \end{tabular}
+    \end{table}
+
+\end{enumerate}
+
+\pagebreak
+
+\question{4}
+
+For each of the following people, decide whether or not they are (1) employed (2) unemployed (3) not in the labor force. If the person is unemployed, indicate what type of unemployment we would categorize it as.
+
+\begin{enumerate}[(a)]
+    \item Bridget recently graduated from college. She plans to go to medical school, she is currently working in a care facility for older adults until she finishes her applications.
+    
+    \textbf{(1) employed} - Bridget is currently working in a care facility for older adults.
+
+    \item Marsha is a licensed nurse. She recently had an argument with her boss and quit, but has already sent out applications to other hospitals in her area.
+    
+    \textbf{(2) unemployed} - Marsha is currently not working, but is actively looking for work. This is \textbf{frictional unemployment}.
+
+    \item Dr. Townshend, a medical doctor, was recently let go from his hospital. The reason he was given is that some of the medical procedures he uses are out-of-date, and he hasn’t kept up-to-date with new advances in medicine. He decides to see if any other hospitals in town will still hire him.
+    
+    \textbf{(2) unemployed} - Dr. Townshend is currently not working, but is actively looking for work. This is \textbf{structural unemployment}.
+
+    \item Jerry lost his job as a Greyhound bus driver after a prolonged illness. He's healthy again now, but has decided to go back to school instead of looking for work
+    
+    \textbf{(3) not in the labor force} - Jerry is not working and is not actively looking for work.
+
+\end{enumerate}
+
+\pagebreak
+
+\question{5}
+
+The Consumer Expenditure Survey finds that a typical consumer in the U.S. buys 1 video game and 80 small pizzas each year. In 2016 a new video game costs \$60 and a small pizza cost \$7. In 2020 a new video game costs \$70 and a small pizza cost \$9.
+
+\begin{align*}
+    \text{CPI} = \frac{\text{Cost of Basket in Current Year}}{\text{Cost of Basket in Base Year}} \times 100
+\end{align*}
+
+\begin{enumerate}[(a)]
+    \item Using 2016 as the base year, what is the CPI in 2016?
+
+    The CPI in the base year is always \textbf{100}.
+
+    \item Using 2016 as the base year, what is the CPI in 2020?
+    
+    \begin{align*}
+        \text{CPI} = \frac{\text{Cost of Basket in 2020}}{\text{Cost of Basket in 2016}} \times 100 = \frac{70 + 9 \times 80}{60 + 7 \times 80} \times 100 = 147.42
+    \end{align*}
+
+    \item Calculate inflation between 2016 and 2020
+    
+    \begin{align*}
+        \text{Inflation} = \frac{\text{CPI in 2020} - \text{CPI in 2016}}{\text{CPI in 2016}} \times 100 = \frac{147.42 - 100}{100} \times 100 = 47.42\%
+    \end{align*}
+
+    \item If you were making \$10/hr in 2016, how much would you have to make in 2020 for your purchasing power to remain constant, given our inflation estimate?
+    
+    \begin{align*}
+        \text{New Wage} = \text{Old Wage} \times \left(1 + \frac{\text{Inflation}}{100}\right) = 10 \times \left(1 + \frac{47.42}{100}\right) = 14.74
+    \end{align*}
+
+    \item \textbf{(2 Points)} If we wanted to calculate inflation accurately, what are some shortcomings of using the CPI that we constructed in this problem?
+    
+    The CPI here only accounts for a very limited basket of goods, video games and pizza, and does not account for other goods and services that consumers buy. Additionally, the CPI does not account for changes in quality of goods and services, and does not account for substitution bias.
+
+\end{enumerate}
+
+\pagebreak
+
+\question{6}
+
+McDonoughland is a small country, founded in 2024 by a wealthy but eccentric billionaire who bought \href{https://www.youtube.com/watch?v=dQw4w9WgXcQ}{Wizard Island} from the U.S. government. McDonoughland produces only board games and books. A typical household in McDonoughland consumes is 12 board games and 30 books each year, and the table below shows McDonoughland's production of board games and books from 2024 through 2026
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c|cc|cc}
+    \multirow{2}{*}{\textbf{Year}} & \multicolumn{2}{c|}{Board Games} & \multicolumn{2}{c}{Books} \\ \cline{2-5} 
+     & \multicolumn{1}{c|}{Quantity} & Price & \multicolumn{1}{c|}{Quantity} & Price \\ \hline
+    2024 & \multicolumn{1}{c|}{50} & \$40 & \multicolumn{1}{c|}{100} & \$15 \\
+    2025 & \multicolumn{1}{c|}{55} & \$55 & \multicolumn{1}{c|}{100} & \$20 \\
+    2026 & \multicolumn{1}{c|}{60} & \$55 & \multicolumn{1}{c|}{100} & \$25
+    \end{tabular}
+    \end{table}
+
+\begin{enumerate}[(a)]
+    \item Using 2024 as the base year, calculate inflation between 2024 and 2026 using the CPI.
+    
+    \begin{align*}
+        \text{CPI} &= \frac{\text{Cost of Basket in Current Year}}{\text{Cost of Basket in Base Year}} \times 100\\\\
+        &= \frac{55 \times 12 + 25 \times 30}{40 \times 12 + 15 \times 30} \times 100 = 151.61
+    \end{align*}
+
+    Therefore, the inflation rate according to CPI between 2024 and 2026 is \textbf{51.61\%}.
+
+    \item Using 2024 as the base year, calculate inflation between 2024 and 2026 using the GDP deflator.
+    
+    \begin{align*}
+        \text{GDP Deflator} &= \frac{\text{Nominal GDP}}{\text{Real GDP}} \times 100\\\\
+        &= \frac{60 \times 55 + 100 \times 25}{60 \times 40 + 100 \times 15} \times 100 = 148.71
+    \end{align*}
+
+    Therefore, the inflation rate according to GDP deflator between 2024 and 2026 is \textbf{48.71\%}.
+
+    \item In one or two sentences, explain why these numbers are not equal.
+    
+    The difference arises because the CPI tracks a fixed basket of goods, while the GDP deflator tracks the prices of all goods and services produced in the economy. Though the CPI might track changes in household prices, the GDP deflator tracks changes in the prices of all goods and services produced in the economy.
+
+\end{enumerate}
+
+
+\end{document}
