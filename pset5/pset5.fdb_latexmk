@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1714095465 "/home/rushil/school/econ/pset5/pset5.tex" "pset5.pdf" "pset5" 1714095466 0
+["pdflatex"] 1714527712 "/home/rushil/school/econ/pset5/pset5.tex" "pset5.pdf" "pset5" 1714527713 0
   "/etc/texmf/web2c/texmf.cnf" 1693368362 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/rushil/school/econ/pset5/pset5.tex" 1714095465 14671 1a1f9a680c80e54ef765ba9f8b643c9d ""
+  "/home/rushil/school/econ/pset5/pset5.tex" 1714527712 14678 d1873bf5e98bd5ad6d75eeeda7fae3a0 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcbx1000.tfm" 1136768653 1536 30fde759286ded71559881bfa2623939 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -221,9 +221,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1681034085 39561 34c98e380bf7c7201ee6a7909aff625a ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1693368379 4623455 fa0568a71dd9a288d6c226ee477506c6 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1693368408 7880218 5644a8bb2704ddc1060e0c139ce5389a ""
-  "pset5.aux" 1714095466 740 e4dcfcdd43c6f2295cfe55af09abddfe "pdflatex"
-  "pset5.out" 1714095466 194 59de06b98702dd2bb15768ebc5b7c9f4 "pdflatex"
-  "pset5.tex" 1714095465 14671 1a1f9a680c80e54ef765ba9f8b643c9d ""
+  "pset5.aux" 1714527713 740 e4dcfcdd43c6f2295cfe55af09abddfe "pdflatex"
+  "pset5.out" 1714527713 194 59de06b98702dd2bb15768ebc5b7c9f4 "pdflatex"
+  "pset5.tex" 1714527712 14678 d1873bf5e98bd5ad6d75eeeda7fae3a0 ""
   (generated)
   "pset5.aux"
   "pset5.log"
